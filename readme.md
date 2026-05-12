@@ -33,10 +33,12 @@ Example output:
 ```
 using LoremPress;
 
-var rnd = new Random();
+// Creates a title using "Academic" style.
+string academic = TitleBuilder.GetTitle(Style.Academic);
+Console.WriteLine(academic);
 
-string title = LoremPress.Title(rnd);
-
+// Creates a title using a random style.
+string title = TitleBuilder.GetTitle();
 Console.WriteLine(title);
 ```
 
