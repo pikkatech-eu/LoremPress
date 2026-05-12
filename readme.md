@@ -46,6 +46,10 @@ Console.WriteLine(academic);
 // Creates a title using a random style.
 string title = TitleBuilder.GetTitle();
 Console.WriteLine(title);
+
+// Creates a random journal name.
+string journalName = JournalNameBuilder.GetJournalName();
+Console.WriteLine(journalName);
 ```
 ## Design Philosophy
 
