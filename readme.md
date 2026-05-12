@@ -41,16 +41,6 @@ Console.WriteLine(academic);
 string title = TitleBuilder.GetTitle();
 Console.WriteLine(title);
 ```
-
-## Core API
-Generate a title
-
-```
-LoremPress.Title(Random rnd)
-```
-
-Returns a randomly generated title string.
-
 ## Design Philosophy
 
 LoremPress is intentionally minimal.
