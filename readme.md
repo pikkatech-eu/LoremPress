@@ -33,7 +33,7 @@ Then:
   - Download self-extracting file
 `https://github.com/pikkatech-eu/LoremPress/releases/download/Beta_1.0/LoremPress_setup_2026-05-12.exe`
 (which is the last version at the moment).
-  - Launch the setup exe file, it will ask you where to install the fikes you need: `LoremPress.dll` and `LoremPress.deps.json`.
+  - Launch the setup exe file, it will ask you where to install the files you need: `LoremPress.dll` and `LoremPress.deps.json`.
   - Add  `LoremPress.dll` as a dependency to your project.
 ## Quick Start
 ```
