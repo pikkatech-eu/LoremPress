@@ -24,31 +24,29 @@ Example output:
   - *On Ancient Structures*
   
 ## Installation
+### Clone this repository
+Choose the local directory where you want the code files of LoremPress to be cloned to.
+Then:
+`git clone https://github.com/pikkatech-eu/LoremPress`
 
-*(to be defined when published)*
-
- `dotnet add package LoremPress`
- 
+### Download binaries
+  - Download self-extracting file
+`https://github.com/pikkatech-eu/LoremPress/releases/download/Beta_1.0/LoremPress_setup_2026-05-12.exe`
+(which is the last version at the moment).
+  - Launch the setup exe file, it will ask you where to install the files you need: `LoremPress.dll` and `LoremPress.deps.json`.
+  - Add  `LoremPress.dll` as a dependency to your project.
 ## Quick Start
 ```
 using LoremPress;
 
-var rnd = new Random();
+// Creates a title using "Academic" style.
+string academic = TitleBuilder.GetTitle(Style.Academic);
+Console.WriteLine(academic);
 
-string title = LoremPress.Title(rnd);
-
+// Creates a title using a random style.
+string title = TitleBuilder.GetTitle();
 Console.WriteLine(title);
 ```
-
-## Core API
-Generate a title
-
-```
-LoremPress.Title(Random rnd)
-```
-
-Returns a randomly generated title string.
-
 ## Design Philosophy
 
 LoremPress is intentionally minimal.
