@@ -116,4 +116,4 @@ LoremPress is conceptually inspired by:
   - classical rhetorical and editorial title structures
 ## License
 
-(to be defined)
+MIT License
