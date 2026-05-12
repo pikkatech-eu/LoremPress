@@ -9,6 +9,9 @@
 
 namespace LoremPress
 {
+	/// <summary>
+	/// Style enum.
+	/// </summary>
 	public enum Style
 	{
 		Academic	= 1,

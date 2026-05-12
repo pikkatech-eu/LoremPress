@@ -9,11 +9,23 @@
 
 namespace LoremPress
 {
+	/// <summary>
+	/// Builder to create random pseudo-realistic titles of publications. 
+	/// Works like a miniature probabilistic rhetoric engine.
+	/// </summary>
 	public static class TitleBuilder
 	{
+		#region Private static members
+		/// <summary>
+		/// Random generator.
+		/// </summary>
 		private static Random _random = new Random();
+		#endregion
 
 		#region "Corpora"
+		/// <summary>
+		/// List of adjectives.
+		/// </summary>
 		static readonly string[] Adjectives =
 												{
 													"Abstract",
@@ -94,6 +106,9 @@ namespace LoremPress
 													"Volatile",
 												};
 
+		/// <summary>
+		/// List of nouns.
+		/// </summary>
 		static readonly string[] Nouns =
 												{
 													"Archives",
@@ -171,8 +186,15 @@ namespace LoremPress
 													"Worlds",
 												};
 
+		/// <summary>
+		/// List of connectors.
+		/// Not used in present version.
+		/// </summary>
 		static readonly string[] Connectors = { "of", "and", "in" };
 
+		/// <summary>
+		/// List of academic templates.
+		/// </summary>
 		static readonly string[] AcademicTemplates =
 		{
 			"On {Adj} {Noun}",
@@ -185,6 +207,9 @@ namespace LoremPress
 			"A Framework for {Adj} {Noun}"
 		};
 
+		/// <summary>
+		/// List of literary templates.
+		/// </summary>
 		static readonly string[] LiteraryTemplates =
 		{
 			"The {Adj} {Noun}",
@@ -198,6 +223,9 @@ namespace LoremPress
 			"The Book of {Adj} {Noun}"
 		};
 
+		/// <summary>
+		/// List of SciFi templates.
+		/// </summary>
 		static readonly string[] SciFiTemplates =
 		{
 			"{Adj} {Noun} Protocol",
@@ -212,6 +240,12 @@ namespace LoremPress
 		};
 		#endregion
 
+		#region Public features
+		/// <summary>
+		/// Creates a random title for a given style.
+		/// </summary>
+		/// <param name="style">Style to use.</param>
+		/// <returns>Created random title.</returns>
 		public static string GetTitle(Style style)
 		{
 			string template = "";
@@ -235,6 +269,10 @@ namespace LoremPress
 			return Render(template);
 		}
 
+		/// <summary>
+		/// Creates a title with a random style.
+		/// </summary>
+		/// <returns>Created random title.</returns>
 		public static string GetTitle()
 		{
 			int i = _random.Next(1, Enum.GetValues(typeof(Style)).Length);
@@ -243,13 +281,25 @@ namespace LoremPress
 
 			return GetTitle(style);
 		}
+		#endregion
 
+		#region Internal Auxiliary
+		/// <summary>
+		/// Picks a random element from an array.
+		/// </summary>
+		/// <param name="arr">Array to pick from.</param>
+		/// <returns>The item picked.</returns>
 		static string Pick(string[] arr) => arr[_random.Next(arr.Length)];
 
+		/// <summary>
+		/// Render a random title using a template.
+		/// </summary>
+		/// <param name="template">Template tu use.</param>
+		/// <returns>Random title generated.</returns>
 		static string Render(string template)
 		{
 			return template.Replace("{Adj}", Pick(Adjectives)).Replace("{Noun}", Pick(Nouns));
 		}
-
+		#endregion
 	}
 }
