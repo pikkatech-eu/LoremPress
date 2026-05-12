@@ -24,10 +24,12 @@ Example output:
   - *On Ancient Structures*
   
 ## Installation
+### Clone this repository
+Choose the local directory where you want the code files of LoremPress to be cloned to.
+Then:
+`git clone https://github.com/pikkatech-eu/LoremPress`
 
-*(to be defined when published)*
-
- `dotnet add package LoremPress`
+### Download binaries
  
 ## Quick Start
 ```
