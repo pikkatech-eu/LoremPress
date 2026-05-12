@@ -7,12 +7,6 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace LoremPress
 {
 	public static class TitleBuilder
@@ -20,108 +14,235 @@ namespace LoremPress
 		private static Random _random = new Random();
 
 		#region "Corpora"
-		//static readonly string[] Adjectives = { "Silent", "Ancient", "Broken", "Hidden" };
-		//static readonly string[] Nouns = { "World", "Empire", "Theory", "Signal" };
 		static readonly string[] Adjectives =
 												{
-													"Silent",
+													"Abstract",
+													"Ancestral",
 													"Ancient",
-													"Hidden",
-													"Broken",
-													"Forgotten",
-													"Infinite",
-													"Dark",
-													"Bright",
-													"Invisible",
-													"Lost",
-													"Sacred",
-													"Mechanical",
+													"Arcane",
 													"Astral",
-													"Temporal",
-													"Eternal",
-													"Fragmented",
-													"Synthetic",
-													"Empty",
-													"Shifting",
-													"Parallel",
-													"Secret",
-													"Lucid",
-													"Iron",
-													"Golden",
-													"Fading",
-													"Emergent",
-													"Recursive",
-													"Distant",
-													"Crimson",
-													"Obscure",
-													"Liminal",
+													"Asymmetric",
+													"Autonomous",
+													"Bright",
+													"Broken",
 													"Celestial",
-													"Quantum",
-													"Mythic",
-													"Radial",
-													"Nomadic",
-													"Invisible",
-													"Primal",
+													"Cerulean",
+													"Concealed",
+													"Crimson",
+													"Dark",
+													"Distant",
+													"Dormant",
+													"Dynamic",
+													"Emergent",
+													"Empty",
+													"Encoded",
+													"Encrypted",
+													"Eternal",
+													"Fading",
+													"Forgotten",
+													"Fragmentary",
+													"Fragmented",
 													"Frozen",
-													"Unwritten"
+													"Golden",
+													"Harmonic",
+													"Hidden",
+													"Infinite",
+													"Invisible",
+													"Iron",
+													"Isolated",
+													"Liminal",
+													"Lost",
+													"Lucid",
+													"Lunar",
+													"Magnetic",
+													"Mechanical",
+													"Monolithic",
+													"Mutable",
+													"Mythic",
+													"Nocturnal",
+													"Nomadic",
+													"Obscure",
+													"Obsidian",
+													"Parallel",
+													"Peripheral",
+													"Polar",
+													"Primal",
+													"Primeval",
+													"Quantum",
+													"Radial",
+													"Recursive",
+													"Remote",
+													"Residual",
+													"Resonant",
+													"Sacred",
+													"Secret",
+													"Shifting",
+													"Silent",
+													"Solar",
+													"Spectral",
+													"Stellar",
+													"Subterranean",
+													"Subtle",
+													"Symbolic",
+													"Synthetic",
+													"Temporal",
+													"Transient",
+													"Translucent",
+													"Unwritten",
+													"Vanishing",
+													"Vertical",
+													"Volatile",
 												};
 
 		static readonly string[] Nouns =
 												{
-													"Worlds",
-													"Signals",
-													"Systems",
-													"Structures",
-													"Horizons",
-													"Empires",
-													"Fragments",
-													"Memories",
-													"Machines",
 													"Archives",
-													"Languages",
-													"Cities",
-													"Maps",
-													"Signals",
-													"Patterns",
-													"Forms",
-													"Entities",
+													"Artifacts",
+													"Atlases",
+													"Blueprints",
+													"Cathedrals",
 													"Chronicles",
+													"Cities",
+													"Codes",
+													"Constellations",
+													"Constructs",
+													"Coordinates",
+													"Corridors",
+													"Cycles",
 													"Dimensions",
+													"Disciplines",
+													"Doctrines",
+													"Dreams",
+													"Echoes",
+													"Empires",
+													"Engines",
+													"Entities",
+													"Equations",
+													"Equinoxes",
+													"Expeditions",
 													"Fields",
+													"Forms",
+													"Fragments",
+													"Frontiers",
+													"Gateways",
+													"Geometries",
+													"Horizons",
+													"Infinities",
+													"Inscriptions",
+													"Labyrinths",
+													"Languages",
+													"Libraries",
+													"Machines",
+													"Maps",
+													"Matrices",
+													"Mechanisms",
+													"Memories",
+													"Mirrors",
+													"Monuments",
+													"Narratives",
 													"Networks",
 													"Objects",
-													"Dreams",
-													"Theories",
-													"Cycles",
-													"Infinities",
-													"Orders",
-													"Ruins",
-													"Codes",
 													"Observations",
-													"Records",
-													"Spaces",
-													"Echoes",
-													"Vectors",
-													"Systems",
+													"Observatories",
+													"Orbits",
+													"Orders",
+													"Parallels",
+													"Patterns",
 													"Phenomena",
-													"Constructs",
+													"Principles",
 													"Realms",
-													"Archives",
-													"Principles"
+													"Records",
+													"Revelations",
+													"Rituals",
+													"Ruins",
+													"Sequences",
+													"Signals",
+													"Spaces",
+													"Spectra",
+													"Structures",
+													"Symbols",
+													"Systems",
+													"Territories",
+													"Theories",
+													"Thresholds",
+													"Translations",
+													"Vectors",
+													"Volumes",
+													"Worlds",
 												};
+
 		static readonly string[] Connectors = { "of", "and", "in" };
 
+		static readonly string[] AcademicTemplates =
+		{
+			"On {Adj} {Noun}",
+			"Studies in {Adj} {Noun}",
+			"A Theory of {Adj} {Noun}",
+			"Notes on {Adj} {Noun}",
+			"Towards a Model of {Adj} {Noun}",
+			"The Structure of {Adj} {Noun}",
+			"Observations on {Adj} {Noun}",
+			"A Framework for {Adj} {Noun}"
+		};
 
-		static readonly string[] Templates =
-												{
-													"{Adj} {Noun}",
-													"{Noun} of {Adj} {Noun}",
-													"The {Adj} {Noun}",
-													"On {Adj} {Noun}",
-												};
+		static readonly string[] LiteraryTemplates =
+		{
+			"The {Adj} {Noun}",
+			"The {Noun} of {Adj} {Noun}",
+			"In the {Adj} {Noun}",
+			"Between {Adj} {Noun}",
+			"A History of {Adj} {Noun}",
+			"The Last {Adj} {Noun}",
+			"Songs of {Adj} {Noun}",
+			"Chronicle of {Adj} {Noun}",
+			"The Book of {Adj} {Noun}"
+		};
+
+		static readonly string[] SciFiTemplates =
+		{
+			"{Adj} {Noun} Protocol",
+			"{Adj} {Noun} System",
+			"Field Report: {Adj} {Noun}",
+			"Log Entry: {Adj} {Noun}",
+			"{Noun} Classification: {Adj}",
+			"Simulation of {Adj} {Noun}",
+			"Model: {Adj} {Noun}",
+			"Analysis of {Adj} {Noun}",
+			"{Adj} {Noun} Interface"
+		};
 		#endregion
 
-		public static string GetTitle() => Render(Templates[_random.Next(Templates.Length)]);
+		public static string GetTitle(Style style)
+		{
+			string template = "";
+			switch (style)
+			{
+				case Style.Literary:
+					template = LiteraryTemplates[_random.Next(LiteraryTemplates.Length)];
+					break;
+
+				case Style.SciFi:
+					template = SciFiTemplates[_random.Next(SciFiTemplates.Length)];
+					break;
+
+
+				case Style.Academic:
+				default:
+					template = AcademicTemplates[_random.Next(AcademicTemplates.Length)];
+					break;
+			}
+
+			return Render(template);
+		}
+
+		public static string GetTitle()
+		{
+			int i = _random.Next(1, Enum.GetValues(typeof(Style)).Length);
+
+			Style style = (Style)i;
+
+			return GetTitle(style);
+		}
 
 		static string Pick(string[] arr) => arr[_random.Next(arr.Length)];
 
