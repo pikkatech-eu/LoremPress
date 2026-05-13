@@ -1,6 +1,6 @@
 # LoremPress
 
-LoremPress is a minimal .NET library for generating synthetic book and article titles using lightweight grammar templates and curated vocabulary.
+LoremPress is a minimal .NET library for generating synthetic book and article titles using lightweight grammar templates and curated vocabulary. I missed some features in the Bogus library and, after ChatGPT was unable to find a replacement, the decision was made to create something small and beatiful. I appreciate ChatGPT's assistance at the decision making as well as at coding.
 
 It is designed to be:
 
@@ -24,6 +24,9 @@ Example output:
   - *On Ancient Structures*
   
 ## Installation
+### Nuget
+(Will be added)
+
 ### Clone this repository
 Choose the local directory where you want the code files of LoremPress to be cloned to.
 Then:
@@ -39,18 +42,113 @@ Then:
 ```
 using LoremPress;
 
-// Creates a title using "Academic" style.
-string academic = TitleBuilder.GetTitle(Style.Academic);
-Console.WriteLine(academic);
+namespace LoremPress.Tests
+{
+	/// <summary>
+	/// Getting Started with LoremPress
+	/// </summary>
+	public static class Program
+	{
+		static void Main()
+		{
+			// Create a publication title with academic flair
+			string academic = Fakir.Publication.Title(Flair.Academic);
+			Console.WriteLine($"Title academic: \"{academic}\"");
 
-// Creates a title using a random style.
-string title = TitleBuilder.GetTitle();
-Console.WriteLine(title);
+			// Create a publication title with literary flair
+			string literary = Fakir.Publication.Title(Flair.Literary);
+			Console.WriteLine($"Title literary: \"{literary}\"");
 
-// Creates a random journal name.
-string journalName = JournalNameBuilder.GetJournalName();
-Console.WriteLine(journalName);
+			// Create a publication title with sci-fi/technical flair
+			string technical = Fakir.Publication.Title(Flair.Technical);
+			Console.WriteLine($"Title technical: \"{technical}\"");
+
+			// Create a publication title with random flair
+			string randomTitle = Fakir.Publication.Title();
+			Console.WriteLine($"Title random: \"{randomTitle}\"");
+
+			Console.WriteLine();
+
+			// Create a journal name
+			string journal = Fakir.Journal.JournalName();
+			Console.WriteLine($"Journal name: \"{journal}\"");
+
+			Console.WriteLine();
+
+			// Create a DOI
+			string doi = Fakir.Codes.Doi();
+			Console.WriteLine($"DOI: \"{doi}\"");
+
+			// Creata an ISBN
+			string isbn = Fakir.Codes.Isbn();
+			Console.WriteLine($"ISBN: \"{isbn}\"");
+
+			// Creata an ISSN
+			string issn = Fakir.Codes.Issn();
+			Console.WriteLine($"ISSN: \"{issn}\"");
+
+			Console.WriteLine();
+
+			// Create a sentence of academic flair
+			string sentAcademic = Fakir.Prose.Sentence(Flair.Academic);
+			Console.WriteLine($"Sentence academic: \"{sentAcademic}\"");
+
+			// Create a sentence of literary flair
+			string sentLiterary = Fakir.Prose.Sentence(Flair.Literary);
+			Console.WriteLine($"Sentence literary: \"{sentLiterary}\"");
+
+			// Create a sentence of technical flair
+			string sentTechnical = Fakir.Prose.Sentence(Flair.Technical);
+			Console.WriteLine($"Sentence technical: \"{sentTechnical}\"");
+
+			// Create a sentence of random flair
+			string sentRandom = Fakir.Prose.Sentence();
+			Console.WriteLine($"Sentence random: \"{sentRandom}\"");
+
+			Console.WriteLine();
+
+			// Create a text of academic flair with given number of sentences
+			string textAcademic = Fakir.Prose.Text(Flair.Academic, 4);
+			Console.WriteLine($"Text academic (4): \"{textAcademic}\"");
+
+			Console.WriteLine();
+
+
+			// Create a text of academic flair with random number of sentences
+			string textAcademicRandom = Fakir.Prose.Text(Flair.Academic, 6, 2);
+			Console.WriteLine($"Text academic (random): \"{textAcademicRandom}\"");
+		}
+	}
+}
+
 ```
+### Your expected output:
+<pre>
+Title academic: "On Spectral Disciplines" \
+Title literary: "Chronicle of Radial Expeditions" \
+Title technical: "Frozen Translations Protocol" \
+Title random: "Towards a Model of Residual Theories"
+
+Journal name: "Quarterly Transactions of Cultural Memory"
+
+DOI: "10.2284/tzuodh.2013.448" \
+ISBN: "9783348670272" \
+ISSN: "8936-8401"
+
+Sentence academic: "The Concealed Labyrinth interacts under controlled conditions." \
+Sentence literary: "The Vector orchestrates through forgotten Constructs." \
+Sentence technical: "The interface constructs user-defined Narratives." \
+Sentence random: "The Empires of the past diverges quietly."
+
+Text academic (4): "The literature echoes conflicting interpretations of Temporal Vectors. 
+					This approach manifests existing theories of Fragmentary Narratives. 
+					Experimental results connects predicted Transient Constellations. 
+					The model extends additional constraints on Dynamic Archives."
+
+Text academic (random): "Empirical data deconstructs across multiple Lost Observations. 
+						 The hypothesis attenuates the dynamics of Asymmetric Expeditions."
+
+</pre>
 ## Design Philosophy
 
 LoremPress is intentionally minimal.
@@ -116,7 +214,7 @@ LoremPress is conceptually inspired by:
 
   - template-based text generation systems
   - procedural content generation techniques
-  - lightweight fake data generators such as Bogus
+  - lightweight fake data generators such as **Bogus**
   - classical rhetorical and editorial title structures
 ## License
 
