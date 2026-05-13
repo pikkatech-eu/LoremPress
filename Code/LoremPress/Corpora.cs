@@ -7,11 +7,11 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-namespace LoremPress.Corpora
+namespace LoremPress
 {
-	internal class TitleCorpus
+	internal class Corpora
 	{
-		#region "Corpora"
+		#region Language Elements
 		/// <summary>
 		/// List of adjectives.
 		/// </summary>
@@ -253,67 +253,12 @@ namespace LoremPress.Corpora
 		};
 
 		/// <summary>
-		/// List of connectors.
-		/// Not used in present version.
-		/// </summary>
-		internal static readonly string[] Connectors = { "of", "and", "in" };
-
-		/// <summary>
-		/// List of academic templates.
-		/// </summary>
-		internal static readonly string[] AcademicTitleTemplates =
-		{
-			"On {Adj} {Noun}",
-			"Studies in {Adj} {Noun}",
-			"A Theory of {Adj} {Noun}",
-			"Notes on {Adj} {Noun}",
-			"Towards a Model of {Adj} {Noun}",
-			"The Structure of {Adj} {Noun}",
-			"Observations on {Adj} {Noun}",
-			"A Framework for {Adj} {Noun}"
-		};
-
-		/// <summary>
-		/// List of literary templates.
-		/// </summary>
-		internal static readonly string[] LiteraryTitleTemplates =
-		{
-			"The {Adj} {Noun}",
-			"The {Noun} of {Adj} {Noun}",
-			"In the {Adj} {Noun}",
-			"Between {Adj} {Noun}",
-			"A History of {Adj} {Noun}",
-			"The Last {Adj} {Noun}",
-			"Songs of {Adj} {Noun}",
-			"Chronicle of {Adj} {Noun}",
-			"The Book of {Adj} {Noun}"
-		};
-
-		/// <summary>
-		/// List of SciFi templates.
-		/// </summary>
-		internal static readonly string[] SciFiTitleTemplates =
-		{
-			"{Adj} {Noun} Protocol",
-			"{Adj} {Noun} System",
-			"Field Report: {Adj} {Noun}",
-			"Log Entry: {Adj} {Noun}",
-			"{Noun} Classification: {Adj}",
-			"Simulation of {Adj} {Noun}",
-			"Model: {Adj} {Noun}",
-			"Analysis of {Adj} {Noun}",
-			"{Adj} {Noun} Interface"
-		};
-		#endregion
-
-
-		/// <summary>
 		/// List of verbs.
 		/// TODO: have two lists: for those sing 3 and common.
 		/// </summary>
 		internal static readonly string[] Verbs =
 		{
-			"conceals"
+			"conceals",
 			"constructs",
 			"contains",
 			"crosses",
@@ -366,7 +311,64 @@ namespace LoremPress.Corpora
 			"transforms",
 			"traverses"
 		};
+		
+		/// <summary>
+		/// List of connectors.
+		/// Not used in present version.
+		/// </summary>
+		internal static readonly string[] Connectors = { "of", "and", "in" };
+		#endregion
 
+		#region Title Templates
+		/// <summary>
+		/// List of academic templates.
+		/// </summary>
+		internal static readonly string[] AcademicTitleTemplates =
+		{
+			"On {Adj} {Noun}",
+			"Studies in {Adj} {Noun}",
+			"A Theory of {Adj} {Noun}",
+			"Notes on {Adj} {Noun}",
+			"Towards a Model of {Adj} {Noun}",
+			"The Structure of {Adj} {Noun}",
+			"Observations on {Adj} {Noun}",
+			"A Framework for {Adj} {Noun}"
+		};
+
+		/// <summary>
+		/// List of literary templates.
+		/// </summary>
+		internal static readonly string[] LiteraryTitleTemplates =
+		{
+			"The {Adj} {Noun}",
+			"The {Noun} of {Adj} {Noun}",
+			"In the {Adj} {Noun}",
+			"Between {Adj} {Noun}",
+			"A History of {Adj} {Noun}",
+			"The Last {Adj} {Noun}",
+			"Songs of {Adj} {Noun}",
+			"Chronicle of {Adj} {Noun}",
+			"The Book of {Adj} {Noun}"
+		};
+
+		/// <summary>
+		/// List of SciFi templates.
+		/// </summary>
+		internal static readonly string[] SciFiTitleTemplates =
+		{
+			"{Adj} {Noun} Protocol",
+			"{Adj} {Noun} System",
+			"Field Report: {Adj} {Noun}",
+			"Log Entry: {Adj} {Noun}",
+			"{Noun} Classification: {Adj}",
+			"Simulation of {Adj} {Noun}",
+			"Model: {Adj} {Noun}",
+			"Analysis of {Adj} {Noun}",
+			"{Adj} {Noun} Interface"
+		};
+		#endregion
+
+		#region Sentence Templates
 		internal static readonly string[] AcademicSentenceTemplates =
 		{
 			"The {Adj} {NounSingular} {Verb} under controlled conditions.",
@@ -500,5 +502,52 @@ namespace LoremPress.Corpora
 			"The architecture {Verb} without external intervention.",
 			"Under load, the {NounSingular} {Verb} unpredictably."
 		};
+		#endregion
+
+		#region Journal Templates
+		internal static readonly string[] JournalNouns =
+		{
+			"Journal",
+			"Review",
+			"Annals",
+			"Proceedings",
+			"Transactions",
+			"Bulletin",
+			"Quarterly",
+			"Reports",
+			"Studies",
+			"Archives"
+		};
+
+		internal static readonly string[] Domains =
+		{
+			"Temporal Studies",
+			"Synthetic Systems",
+			"Comparative Structures",
+			"Symbolic Logic",
+			"Astronomical Research",
+			"Applied Geometry",
+			"Cultural Memory",
+			"Quantum Dynamics",
+			"Historical Analysis",
+			"Computational Theory",
+			"Language Systems",
+			"Artificial Societies",
+			"Mythic Studies",
+			"Regional Cartography",
+			"Recursive Mathematics"
+		};
+
+		internal static readonly string[] JournalTemplates =
+		{
+			"{JournalNoun} of {Domain}",
+			"International {JournalNoun} of {Domain}",
+			"{Domain} {JournalNoun}",
+			"Quarterly {JournalNoun} of {Domain}",
+			"Annals of {Domain}",
+			"{Domain}: A {JournalNoun}",
+			"Transactions in {Domain}"
+		};
+		#endregion
 	}
 }

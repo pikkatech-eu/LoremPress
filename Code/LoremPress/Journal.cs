@@ -13,13 +13,13 @@ namespace LoremPress
 	{
 		public string JournalName()
 		{
-			string template = Tools.Pick(Corpora.JournalCorpus.JournalTemplates);
+			string template = Tools.Pick(Corpora.JournalTemplates);
 			return Render(template);
 		}
 
 		static string Render(string template)
 		{
-			return template.Replace("{JournalNoun}", Tools.Pick(Corpora.JournalCorpus.JournalNouns)).Replace("{Domain}", Tools.Pick(Corpora.JournalCorpus.Domains));
+			return template.Replace("{JournalNoun}", Tools.Pick(Corpora.JournalNouns)).Replace("{Domain}", Tools.Pick(Corpora.Domains));
 		}
 
 	}

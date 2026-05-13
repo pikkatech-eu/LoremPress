@@ -32,18 +32,18 @@ namespace LoremPress
 			switch (style)
 			{
 				case Style.Literary:
-					template = Tools.Pick(Corpora.TitleCorpus.LiterarySentenceTemplates);
+					template = Tools.Pick(Corpora.LiterarySentenceTemplates);
 					break;
 
 				case Style.SciFi:
 				case Style.Technical:
-					template = Tools.Pick(Corpora.TitleCorpus.TechnicalSentenceTemplates);
+					template = Tools.Pick(Corpora.TechnicalSentenceTemplates);
 					break;
 
 
 				case Style.Academic:
 				default:
-					template = Tools.Pick(Corpora.TitleCorpus.AcademicSentenceTemplates);
+					template = Tools.Pick(Corpora.AcademicSentenceTemplates);
 					break;
 			}
 
@@ -58,10 +58,10 @@ namespace LoremPress
 
 				return token switch
 				{
-					"Adj" => Tools.Pick(Corpora.TitleCorpus.Adjectives),
-					"NounPlural" => Tools.Pick(Corpora.TitleCorpus.NounPlural),
-					"NounSingular" => Tools.Pick(Corpora.TitleCorpus.NounSingular),
-					"Verb" => Tools.Pick(Corpora.TitleCorpus.Verbs),
+					"Adj" => Tools.Pick(Corpora.Adjectives),
+					"NounPlural" => Tools.Pick(Corpora.NounPlural),
+					"NounSingular" => Tools.Pick(Corpora.NounSingular),
+					"Verb" => Tools.Pick(Corpora.Verbs),
 					_ => match.Value
 				};
 			});

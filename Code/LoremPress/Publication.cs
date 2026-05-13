@@ -30,18 +30,18 @@ namespace LoremPress
 			switch (style)
 			{
 				case Style.Literary:
-					template = Tools.Pick(Corpora.TitleCorpus.LiteraryTitleTemplates);
+					template = Tools.Pick(Corpora.LiteraryTitleTemplates);
 					break;
 
 				case Style.SciFi:
 				case Style.Technical:
-					template = Tools.Pick(Corpora.TitleCorpus.SciFiTitleTemplates);
+					template = Tools.Pick(Corpora.SciFiTitleTemplates);
 					break;
 
 
 				case Style.Academic:
 				default:
-					template = Tools.Pick(Corpora.TitleCorpus.AcademicTitleTemplates);
+					template = Tools.Pick(Corpora.AcademicTitleTemplates);
 					break;
 			}
 
@@ -69,7 +69,7 @@ namespace LoremPress
 		/// <returns>Random title generated.</returns>
 		static string Render(string template)
 		{
-			return template.Replace("{Adj}", Tools.Pick(Corpora.TitleCorpus.Adjectives)).Replace("{Noun}", Tools.Pick(Corpora.TitleCorpus.NounPlural));
+			return template.Replace("{Adj}", Tools.Pick(Corpora.Adjectives)).Replace("{Noun}", Tools.Pick(Corpora.NounPlural));
 		}
 	}
 }
