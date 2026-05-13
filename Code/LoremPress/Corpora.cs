@@ -9,6 +9,9 @@
 
 namespace LoremPress
 {
+	/// <summary>
+	/// Contains mini-corpora to generate publication titles, journal names, and sentences.
+	/// </summary>
 	internal class Corpora
 	{
 		#region Language Elements
@@ -96,7 +99,7 @@ namespace LoremPress
 		};
 
 		/// <summary>
-		/// List of nouns.
+		/// List of nouns in plural.
 		/// </summary>
 		internal  static readonly string[] NounPlural =
 		{
@@ -175,6 +178,9 @@ namespace LoremPress
 			"Worlds",
 		};
 
+		/// <summary>
+		/// List of nouns in singular.
+		/// </summary>
 		internal  static readonly string[] NounSingular =
 		{
 			"Archive",
@@ -369,6 +375,9 @@ namespace LoremPress
 		#endregion
 
 		#region Sentence Templates
+		/// <summary>
+		/// Sentence templates with academc flair.
+		/// </summary>
 		internal static readonly string[] AcademicSentenceTemplates =
 		{
 			"The {Adj} {NounSingular} {Verb} under controlled conditions.",
@@ -414,6 +423,9 @@ namespace LoremPress
 			"We conclude that {Adj} {NounPlural} {Verb} under constrained conditions."
 		};
 
+		/// <summary>
+		/// Sentence templates with literary flair.
+		/// </summary>
 		internal static readonly string[] LiterarySentenceTemplates =
 		{
 			"The {Adj} {NounPlural} {Verb} in silence.",
@@ -459,6 +471,9 @@ namespace LoremPress
 			"And so the {Adj} {NounPlural} {Verb} forever."
 		};
 
+		/// <summary>
+		/// Sentence templates with technical flair.
+		/// </summary>
 		internal static readonly string[] TechnicalSentenceTemplates =
 		{
 			"The {Adj} {NounSingular} {Verb} the {Adj} {NounSingular}.",
@@ -505,6 +520,9 @@ namespace LoremPress
 		#endregion
 
 		#region Journal Templates
+		/// <summary>
+		/// List of nouns to build journal names.
+		/// </summary>
 		internal static readonly string[] JournalNouns =
 		{
 			"Journal",
@@ -519,6 +537,9 @@ namespace LoremPress
 			"Archives"
 		};
 
+		/// <summary>
+		/// List of domain definition to build journal names.
+		/// </summary>
 		internal static readonly string[] Domains =
 		{
 			"Temporal Studies",
@@ -538,6 +559,9 @@ namespace LoremPress
 			"Recursive Mathematics"
 		};
 
+		/// <summary>
+		/// Templates to build journal names.
+		/// </summary>
 		internal static readonly string[] JournalTemplates =
 		{
 			"{JournalNoun} of {Domain}",

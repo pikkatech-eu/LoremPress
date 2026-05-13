@@ -11,25 +11,33 @@ using System.Text.RegularExpressions;
 
 namespace LoremPress
 {
+	/// <summary>
+	/// Generates different pieces of random text.
+	/// </summary>
 	public class Prose
 	{
 		#region Sentence and Text building
-		public string Sentence(Style style)
+		/// <summary>
+		/// Creates a sentence of given flair.
+		/// </summary>
+		/// <param name="flair">Flair to use.</param>
+		/// <returns>Random sentence generated.</returns>
+		public string Sentence(Flair flair)
 		{
 			string template = "";
-			switch (style)
+			switch (flair)
 			{
-				case Style.Literary:
+				case Flair.Literary:
 					template = Tools.Pick(Corpora.LiterarySentenceTemplates);
 					break;
 
-				case Style.SciFi:
-				case Style.Technical:
+				case Flair.SciFi:
+				case Flair.Technical:
 					template = Tools.Pick(Corpora.TechnicalSentenceTemplates);
 					break;
 
 
-				case Style.Academic:
+				case Flair.Academic:
 				default:
 					template = Tools.Pick(Corpora.AcademicSentenceTemplates);
 					break;
@@ -38,45 +46,80 @@ namespace LoremPress
 			return Render(template);
 		}
 
+		/// <summary>
+		/// Creates a sentence of random flair.
+		/// </summary>
+		/// <returns>Random sentence generated.</returns>
 		public string Sentence()
 		{
-			int i = Tools.Randomizer.Next(1, Enum.GetValues(typeof(Style)).Length);
+			int i = Tools.Randomizer.Next(1, Enum.GetValues(typeof(Flair)).Length);
 
-			Style style = (Style)i;
+			Flair style = (Flair)i;
 
 			return Sentence(style);
 		}
 
-		public string[] Sentences(Style style, int numberOfSentences)
+		/// <summary>
+		/// Creates an array of sentences of given flair.
+		/// </summary>
+		/// <param name="flair">Flair to use.</param>
+		/// <param name="numberOfSentences">Number of sentences to generate.</param>
+		/// <returns>Sentences genarated.</returns>
+		public string[] Sentences(Flair flair, int numberOfSentences)
 		{
 			string[] result = new string[numberOfSentences];
 
 			for (int i = 0; i < numberOfSentences; i++)
 			{
-				result[i] = this.Sentence(style);
+				result[i] = this.Sentence(flair);
 			}
 
 			return result;
 		}
 
-		public string Text(Style style, int numberOfSentences)
+		/// <summary>
+		/// Added for convenience. Generates a text consisting of sentences of given flair.
+		/// </summary>
+		/// <param name="flair">Flair to use.</param>
+		/// <param name="numberOfSentences">Number of sentences to generate.</param>
+		/// <returns>The text generated.</returns>
+		public string Text(Flair flair, int numberOfSentences)
 		{
-			return String.Join(" ", this.Sentences(style, numberOfSentences));
+			return String.Join(" ", this.Sentences(flair, numberOfSentences));
 		}
 
-		public string[] Sentences(Style style, int maxNumberOfSentences, int minNumberOfSentences = 1)
+		/// <summary>
+		/// Creates an array of sentences of given flair consisting of a random number of sentences.
+		/// </summary>
+		/// <param name="flair">Flair to use.</param>
+		/// <param name="maxNumberOfSentences">Maximum number of sentences.</param>
+		/// <param name="minNumberOfSentences">Minimum number of sentences. Default = 1.</param>
+		/// <returns></returns>
+		public string[] Sentences(Flair flair, int maxNumberOfSentences, int minNumberOfSentences = 1)
 		{
 			int numberOfSentences = Tools.Randomizer.Next(minNumberOfSentences, maxNumberOfSentences + 1);
-			return this.Sentences(style, numberOfSentences);
+			return this.Sentences(flair, numberOfSentences);
 		}
 
-		public string Text(Style style, int maxNumberOfSentences, int minNumberOfSentences = 1)
+		/// <summary>
+		/// Added for convenience. Creates a array of text of given flair consisting of a random number of sentences.
+		/// </summary>
+		/// <param name="flair">Flair to use.</param>
+		/// <param name="maxNumberOfSentences">Maximum number of sentences.</param>
+		/// <param name="minNumberOfSentences">Minimum number of sentences. Default = 1.</param>
+		/// <returns>The text generated.</returns>
+		public string Text(Flair flair, int maxNumberOfSentences, int minNumberOfSentences = 1)
 		{
-			return String.Join(" ", this.Sentences(style, maxNumberOfSentences, minNumberOfSentences));
+			return String.Join(" ", this.Sentences(flair, maxNumberOfSentences, minNumberOfSentences));
 		}
 		#endregion
 
 		#region Internal Auxiliary
+		/// <summary>
+		/// Renders a sentence using a template.
+		/// </summary>
+		/// <param name="template">Template to use</param>
+		/// <returns>Sentence generated.</returns>
 		internal static string Render(string template)
 		{
 			return Regex.Replace(template, @"\{(\w+)\}", match =>
@@ -85,11 +128,11 @@ namespace LoremPress
 
 				return token switch
 				{
-					"Adj" => Tools.Pick(Corpora.Adjectives),
-					"NounPlural" => Tools.Pick(Corpora.NounPlural),
-					"NounSingular" => Tools.Pick(Corpora.NounSingular),
-					"Verb" => Tools.Pick(Corpora.Verbs),
-					_ => match.Value
+					"Adj"			=> Tools.Pick(Corpora.Adjectives),
+					"NounPlural"	=> Tools.Pick(Corpora.NounPlural),
+					"NounSingular"	=> Tools.Pick(Corpora.NounSingular),
+					"Verb"			=> Tools.Pick(Corpora.Verbs),
+					_				=> match.Value
 				};
 			});
 		}

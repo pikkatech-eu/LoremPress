@@ -7,39 +7,35 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 namespace LoremPress
 {
+	/// <summary>
+	/// Creates publiucation titles of different types and flairs.
+	/// </summary>
 	public class Publication
 	{
 		#region Public features
 		/// <summary>
-		/// Creates a random title for a given style.
+		/// Creates a random publication title for a given flair.
 		/// </summary>
-		/// <param name="style">Style to use.</param>
-		/// <returns>Created random title.</returns>
-		public string Title(Style style)
+		/// <param name="flair">Flair to use.</param>
+		/// <returns>Created random publication title.</returns> 
+		public string Title(Flair flair)
 		{
 			string template = "";
-			switch (style)
+			switch (flair)
 			{
-				case Style.Literary:
+				case Flair.Literary:
 					template = Tools.Pick(Corpora.LiteraryTitleTemplates);
 					break;
 
-				case Style.SciFi:
-				case Style.Technical:
+				case Flair.SciFi:
+				case Flair.Technical:
 					template = Tools.Pick(Corpora.SciFiTitleTemplates);
 					break;
 
 
-				case Style.Academic:
+				case Flair.Academic:
 				default:
 					template = Tools.Pick(Corpora.AcademicTitleTemplates);
 					break;
@@ -49,27 +45,29 @@ namespace LoremPress
 		}
 
 		/// <summary>
-		/// Creates a title with a random style.
+		/// Creates a title with a random flair.
 		/// </summary>
-		/// <returns>Created random title.</returns>
+		/// <returns>Created random publication title.</returns>
 		public string Title()
 		{
-			int i = Tools.Randomizer.Next(1, Enum.GetValues(typeof(Style)).Length);
+			int i = Tools.Randomizer.Next(1, Enum.GetValues(typeof(Flair)).Length);
 
-			Style style = (Style)i;
+			Flair style = (Flair)i;
 
 			return Title(style);
 		}
 		#endregion
 
+		#region Internal Auxiliary
 		/// <summary>
 		/// Render a random title using a template.
 		/// </summary>
-		/// <param name="template">Template tu use.</param>
+		/// <param name="template">Template to use.</param>
 		/// <returns>Random title generated.</returns>
-		static string Render(string template)
+		internal static string Render(string template)
 		{
 			return template.Replace("{Adj}", Tools.Pick(Corpora.Adjectives)).Replace("{Noun}", Tools.Pick(Corpora.NounPlural));
 		}
+		#endregion
 	}
 }

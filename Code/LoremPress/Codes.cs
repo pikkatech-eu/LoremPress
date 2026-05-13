@@ -7,20 +7,29 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace LoremPress
 {
+	/// <summary>
+	/// Generates different useful codes.
+	/// </summary>
 	public class Codes
 	{
+		#region Constants
+		/// <summary>
+		/// Minimum length of the string component in a DOI.
+		/// </summary>
 		private const int MIN_STRING_LENGTH = 3;
+
+		/// <summary>
+		/// Maximum length of the string component in a DOI.
+		/// </summary>
 		private const int MAX_STRING_LENGTH = 7;
-		
+		#endregion
+
+		/// <summary>
+		/// Generates a random DOI.
+		/// </summary>
+		/// <returns>DOI created.</returns>
 		public string Doi()
 		{
 			int registrant = Tools.Randomizer.Next(1000, 9999);
@@ -37,9 +46,9 @@ namespace LoremPress
 		}
 
 		/// <summary>
-		/// Generates random ISBN 13.
+		/// Generates a random ISBN 13.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>ISBN created.</returns>
 		public string Isbn()
 		{
 			int[] digits = new int[13];
@@ -64,6 +73,10 @@ namespace LoremPress
 
 		}
 
+		/// <summary>
+		/// Generates a random ISSN.
+		/// </summary>
+		/// <returns>ISSN created.</returns>
 		public string Issn()
 		{
 			int[] digits = new int[8];

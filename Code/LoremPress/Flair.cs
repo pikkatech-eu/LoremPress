@@ -10,13 +10,28 @@
 namespace LoremPress
 {
 	/// <summary>
-	/// Style enum.
+	/// Flair, or style of the text.
 	/// </summary>
-	public enum Style
+	public enum Flair
 	{
+		/// <summary>
+		/// Academic flair.
+		/// </summary>
 		Academic	= 1,
+
+		/// <summary>
+		/// Literary flair.
+		/// </summary>
 		Literary	= 2,
+
+		/// <summary>
+		/// SciFi-flair.
+		/// </summary>
 		SciFi		= 3,
+				
+		/// <summary>
+		/// Technical flair.
+		/// </summary>
 		Technical	= 4
 	}
 }
