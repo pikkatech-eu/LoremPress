@@ -9,27 +9,31 @@
 
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LoremPress
 {
-	public class Doi
+	public class Codes
 	{
-		//public string Doi()
-		//{
-		//	int registrant = Tools.Randomizer.Next(1000, 9999);
+		private const int MIN_STRING_LENGTH = 3;
+		private const int MAX_STRING_LENGTH = 7;
+		
+		public string Doi()
+		{
+			int registrant = Tools.Randomizer.Next(1000, 9999);
 
-		//	string word		= _faker.Hacker.Abbreviation().ToLower();
+			string word = Tools.RandomString(MIN_STRING_LENGTH, MAX_STRING_LENGTH);
 
-		//	string suffix =
-		//		$"{word.ToLower()}." +
-		//		$"{Tools.Randomizer.Next(2000, 2035)}." +
-		//		$"{Tools.Randomizer.Next(1, 999):000}";
+			string suffix =
+				$"{word.ToLower()}." +
+				$"{Tools.Randomizer.Next(2000, 2035)}." +
+				$"{Tools.Randomizer.Next(1, 999):000}";
 
-		//	return $"10.{registrant}/{suffix}";
+			return $"10.{registrant}/{suffix}";
 
-		//}
+		}
 	}
 }

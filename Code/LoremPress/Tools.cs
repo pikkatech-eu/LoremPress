@@ -9,6 +9,8 @@ namespace LoremPress
 {
 	internal static class Tools
 	{
+		private const string ALPHABETH = "abcdefhijklmnopqrstuvwxyz";
+
 		internal static Random Randomizer { get; } = new Random();
 
 		/// <summary>
@@ -18,6 +20,23 @@ namespace LoremPress
 		/// <returns>The item picked.</returns>
 		internal static string Pick(string[] array) => array[Randomizer.Next(array.Length)];
 
+		internal static string RandomString(int length)
+		{
+			string result = "";
 
+			for (int i = 0; i < length; i++)
+			{
+				result	+= ALPHABETH[Randomizer.Next(ALPHABETH.Length)];
+			}
+
+			return result;
+		}
+
+		internal static string RandomString(int minLength, int maxLength)
+		{
+			int length = Randomizer.Next(minLength, maxLength + 1);
+
+			return RandomString(length);
+		}
 	}
 }

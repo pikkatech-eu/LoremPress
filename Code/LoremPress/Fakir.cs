@@ -21,5 +21,7 @@ namespace LoremPress
 		public static Journal Journal{get;}	= new Journal();
 
 		public static Prose Prose	{get;}	= new Prose();
+
+		public static Codes Codes		{get;} = new Codes();
 	}
 }

@@ -7,25 +7,13 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace LoremPress
 {
 	public class Prose
 	{
-		internal string[] Templates =
-										{
-											"Within the {Adj} {Noun}, the {Noun} {Verb} quietly.",
-											"Several {Adj} {Noun} {Verb} beyond the {Noun}.",
-											"The {Noun} of the {Adj} {Noun} remains {Adj}."
-										};
-
-
+		#region Sentence and Text building
 		public string Sentence(Style style)
 		{
 			string template = "";
@@ -86,6 +74,7 @@ namespace LoremPress
 		{
 			return String.Join(" ", this.Sentences(style, maxNumberOfSentences, minNumberOfSentences));
 		}
+		#endregion
 
 		#region Internal Auxiliary
 		internal static string Render(string template)
