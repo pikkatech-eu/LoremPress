@@ -30,17 +30,18 @@ namespace LoremPress
 			switch (style)
 			{
 				case Style.Literary:
-					template = Tools.Pick(Corpora.TitleCorpus.LiteraryTemplates);
+					template = Tools.Pick(Corpora.TitleCorpus.LiteraryTitleTemplates);
 					break;
 
 				case Style.SciFi:
-					template = Tools.Pick(Corpora.TitleCorpus.SciFiTemplates);
+				case Style.Technical:
+					template = Tools.Pick(Corpora.TitleCorpus.SciFiTitleTemplates);
 					break;
 
 
 				case Style.Academic:
 				default:
-					template = Tools.Pick(Corpora.TitleCorpus.AcademicTemplates);
+					template = Tools.Pick(Corpora.TitleCorpus.AcademicTitleTemplates);
 					break;
 			}
 

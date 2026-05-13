@@ -16,6 +16,7 @@ namespace LoremPress
 	{
 		Academic	= 1,
 		Literary	= 2,
-		SciFi		= 3
+		SciFi		= 3,
+		Technical	= 4
 	}
 }

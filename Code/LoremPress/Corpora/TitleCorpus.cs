@@ -184,7 +184,7 @@ namespace LoremPress.Corpora
 		/// <summary>
 		/// List of academic templates.
 		/// </summary>
-		internal static readonly string[] AcademicTemplates =
+		internal static readonly string[] AcademicTitleTemplates =
 		{
 			"On {Adj} {Noun}",
 			"Studies in {Adj} {Noun}",
@@ -199,7 +199,7 @@ namespace LoremPress.Corpora
 		/// <summary>
 		/// List of literary templates.
 		/// </summary>
-		internal static readonly string[] LiteraryTemplates =
+		internal static readonly string[] LiteraryTitleTemplates =
 		{
 			"The {Adj} {Noun}",
 			"The {Noun} of {Adj} {Noun}",
@@ -215,7 +215,7 @@ namespace LoremPress.Corpora
 		/// <summary>
 		/// List of SciFi templates.
 		/// </summary>
-		internal static readonly string[] SciFiTemplates =
+		internal static readonly string[] SciFiTitleTemplates =
 		{
 			"{Adj} {Noun} Protocol",
 			"{Adj} {Noun} System",
@@ -228,5 +228,50 @@ namespace LoremPress.Corpora
 			"{Adj} {Noun} Interface"
 		};
 		#endregion
+
+
+		
+		internal static readonly string[] Verbs =
+										{
+											"reveals",
+											"contains",
+											"transforms",
+											"observes",
+											"crosses",
+											"defines",
+											"echoes",
+											"extends",
+											"reflects",
+											"preserves",
+											"constructs",
+											"conceals"
+										};
+
+		internal static readonly string[] AcademicSentenceTemplates =
+		{
+			"The {Adj} {Noun} {Verb} the {Adj} {Noun} under certain conditions.",
+			"Within the {Adj} {Noun}, several {Adj} {Nouns} {Verb} simultaneously.",
+			"The {Noun} of the {Adj} {Noun} remains partially unresolved.",
+			"In relation to the {Adj} {Noun}, the {Adj} {Noun} {Verb} unexpectedly.",
+			"Recent observations of the {Adj} {Noun} suggest a {Adj} {Noun}."
+		};
+
+		internal static readonly string[] LiterarySentenceTemplates =
+		{
+			"Beyond the {Adj} {Noun}, the {Adj} {Noun} slowly {Verb}.",
+			"The {Adj} {Noun} preserves the memory of forgotten {Nouns}.",
+			"Under the {Adj} {Noun}, several {Adj} {Nouns} remain invisible.",
+			"The {Adj} {Noun} echoes through the distant {Noun}.",
+			"Between the {Adj} {Nouns}, a {Adj} {Noun} quietly {Verb}."
+		};
+
+		internal static readonly string[] TechnicalSentenceTemplates =
+		{
+			"The {Adj} {Noun} interface {Verb} all known {Nouns}.",
+			"Several {Adj} {Nouns} were detected within the {Adj} {Noun}.",
+			"The {Adj} {Noun} protocol defines a new class of {Adj} {Nouns}.",
+			"Under isolated conditions, the {Adj} {Noun} {Verb} autonomously.",
+			"A recursive model of the {Adj} {Noun} was constructed recently."
+		};
 	}
 }

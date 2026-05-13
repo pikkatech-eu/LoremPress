@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LoremPress
@@ -25,37 +26,54 @@ namespace LoremPress
 										};
 
 
-		static readonly string[] Verbs =
-										{
-											"reveals",
-											"contains",
-											"transforms",
-											"observes",
-											"crosses",
-											"defines",
-											"echoes",
-											"extends",
-											"reflects",
-											"preserves",
-											"constructs",
-											"conceals"
-										};
-
-		public string Sentence()
+		public string Sentence(Style style)
 		{
-			string template	= Tools.Pick(Templates);
+			string template = "";
+			switch (style)
+			{
+				case Style.Literary:
+					template = Tools.Pick(Corpora.TitleCorpus.LiterarySentenceTemplates);
+					break;
+
+				case Style.SciFi:
+				case Style.Technical:
+					template = Tools.Pick(Corpora.TitleCorpus.TechnicalSentenceTemplates);
+					break;
+
+
+				case Style.Academic:
+				default:
+					template = Tools.Pick(Corpora.TitleCorpus.AcademicSentenceTemplates);
+					break;
+			}
 
 			return Render(template);
 		}
 
-		private static string Render(string template)
-		{
-			string result = template;
-			result = result.Replace("{Adj}", Tools.Pick(Corpora.TitleCorpus.Adjectives));
-			result = result.Replace("{Noun}", Tools.Pick(Corpora.TitleCorpus.Nouns));
-			result = result.Replace("{Verb}", Tools.Pick(Verbs));
+		//private static string Render(string template)
+		//{
+		//	string result = template;
+		//	result = result.Replace("{Adj}", Tools.Pick(Corpora.TitleCorpus.Adjectives));
+		//	result = result.Replace("{Noun}", Tools.Pick(Corpora.TitleCorpus.Nouns));
+		//	result = result.Replace("{Verb}", Tools.Pick(Corpora.TitleCorpus.Verbs));
 
-			return result;
+		//	return result;
+		//}
+
+		internal static string Render(string template)
+		{
+			return Regex.Replace(template, @"\{(\w+)\}", match =>
+			{
+				string token = match.Groups[1].Value;
+
+				return token switch
+				{
+					"Adj" => Tools.Pick(Corpora.TitleCorpus.Adjectives),
+					"Noun" => Tools.Pick(Corpora.TitleCorpus.Nouns),
+					"Verb" => Tools.Pick(Corpora.TitleCorpus.Verbs),
+					_ => match.Value
+				};
+			});
 		}
 	}
 }
