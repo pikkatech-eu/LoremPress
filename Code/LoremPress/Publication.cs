@@ -69,7 +69,7 @@ namespace LoremPress
 		/// <returns>Random title generated.</returns>
 		static string Render(string template)
 		{
-			return template.Replace("{Adj}", Tools.Pick(Corpora.TitleCorpus.Adjectives)).Replace("{Noun}", Tools.Pick(Corpora.TitleCorpus.Nouns));
+			return template.Replace("{Adj}", Tools.Pick(Corpora.TitleCorpus.Adjectives)).Replace("{Noun}", Tools.Pick(Corpora.TitleCorpus.NounPlural));
 		}
 	}
 }

@@ -50,16 +50,6 @@ namespace LoremPress
 			return Render(template);
 		}
 
-		//private static string Render(string template)
-		//{
-		//	string result = template;
-		//	result = result.Replace("{Adj}", Tools.Pick(Corpora.TitleCorpus.Adjectives));
-		//	result = result.Replace("{Noun}", Tools.Pick(Corpora.TitleCorpus.Nouns));
-		//	result = result.Replace("{Verb}", Tools.Pick(Corpora.TitleCorpus.Verbs));
-
-		//	return result;
-		//}
-
 		internal static string Render(string template)
 		{
 			return Regex.Replace(template, @"\{(\w+)\}", match =>
@@ -69,7 +59,8 @@ namespace LoremPress
 				return token switch
 				{
 					"Adj" => Tools.Pick(Corpora.TitleCorpus.Adjectives),
-					"Noun" => Tools.Pick(Corpora.TitleCorpus.Nouns),
+					"NounPlural" => Tools.Pick(Corpora.TitleCorpus.NounPlural),
+					"NounSingular" => Tools.Pick(Corpora.TitleCorpus.NounSingular),
 					"Verb" => Tools.Pick(Corpora.TitleCorpus.Verbs),
 					_ => match.Value
 				};
