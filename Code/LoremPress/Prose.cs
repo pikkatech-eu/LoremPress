@@ -50,6 +50,44 @@ namespace LoremPress
 			return Render(template);
 		}
 
+		public string Sentence()
+		{
+			int i = Tools.Randomizer.Next(1, Enum.GetValues(typeof(Style)).Length);
+
+			Style style = (Style)i;
+
+			return Sentence(style);
+		}
+
+		public string[] Sentences(Style style, int numberOfSentences)
+		{
+			string[] result = new string[numberOfSentences];
+
+			for (int i = 0; i < numberOfSentences; i++)
+			{
+				result[i] = this.Sentence(style);
+			}
+
+			return result;
+		}
+
+		public string Text(Style style, int numberOfSentences)
+		{
+			return String.Join(" ", this.Sentences(style, numberOfSentences));
+		}
+
+		public string[] Sentences(Style style, int maxNumberOfSentences, int minNumberOfSentences = 1)
+		{
+			int numberOfSentences = Tools.Randomizer.Next(minNumberOfSentences, maxNumberOfSentences + 1);
+			return this.Sentences(style, numberOfSentences);
+		}
+
+		public string Text(Style style, int maxNumberOfSentences, int minNumberOfSentences = 1)
+		{
+			return String.Join(" ", this.Sentences(style, maxNumberOfSentences, minNumberOfSentences));
+		}
+
+		#region Internal Auxiliary
 		internal static string Render(string template)
 		{
 			return Regex.Replace(template, @"\{(\w+)\}", match =>
@@ -66,5 +104,6 @@ namespace LoremPress
 				};
 			});
 		}
+		#endregion
 	}
 }
