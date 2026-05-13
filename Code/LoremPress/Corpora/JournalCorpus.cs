@@ -1,19 +1,23 @@
 ﻿/***********************************************************************************
-* File:         JournalNameBuilder.cs                                              *
-* Contents:     Class JournalNameBuilder                                           *
+* File:         JournalCorpus.cs                                                   *
+* Contents:     Class JournalCorpus                                                *
 * Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-12 22:50                                                   *
+* Date:         2026-05-13 11:37                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-namespace LoremPress
-{
-	public static class JournalNameBuilder
-	{
-		private static Random _random = new Random();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-		static readonly string[] JournalNouns =
+namespace LoremPress.Corpora
+{
+	internal class JournalCorpus
+	{
+		internal static readonly string[] JournalNouns =
 		{
 			"Journal",
 			"Review",
@@ -27,7 +31,7 @@ namespace LoremPress
 			"Archives"
 		};
 
-		static readonly string[] Domains =
+		internal static readonly string[] Domains =
 		{
 			"Temporal Studies",
 			"Synthetic Systems",
@@ -47,7 +51,7 @@ namespace LoremPress
 		};
 
 
-		static readonly string[] JournalTemplates =
+		internal static readonly string[] JournalTemplates =
 		{
 			"{JournalNoun} of {Domain}",
 			"International {JournalNoun} of {Domain}",
@@ -58,17 +62,5 @@ namespace LoremPress
 			"Transactions in {Domain}"
 		};
 
-		public static string GetJournalName()
-		{
-			string template = JournalTemplates[_random.Next(JournalTemplates.Length)];
-			return Render(template);
-		}
-
-		static string Pick(string[] arr) => arr[_random.Next(arr.Length)];
-
-		static string Render(string template)
-		{
-			return template.Replace("{JournalNoun}", Pick(JournalNouns)).Replace("{Domain}", Pick(Domains));
-		}
 	}
 }
