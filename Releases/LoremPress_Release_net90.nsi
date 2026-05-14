@@ -21,7 +21,7 @@ Section "Files"
   SetOutPath "$INSTDIR"
   
   ; Put files there
-  File /r ".\net9.0\*.dll"
-  File /r ".\net9.0\*.json"
+  File /r "..\Code\Binary\net9.0\*.dll"
+  File /r "..\Code\Binary\net9.0\*.json"
   
 SectionEnd ; end the section
