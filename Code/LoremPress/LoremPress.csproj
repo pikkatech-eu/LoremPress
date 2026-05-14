@@ -7,7 +7,7 @@
 		<OutputPath>..\Binary</OutputPath>
 		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 		<Title>LoremPress</Title>
-		<Authors>Stanislav Koncebovski, Francesca Yffelti</Authors>
+		<Authors>Alexander Konnen, Francesca Yffelti</Authors>
 		<Company>pikkatech.eu</Company>
 		<Description>Lightweight symbolic lorem-like generator of random titles, journals and other entities</Description>
 		<PackageProjectUrl>https://github.com/pikkatech-eu/LoremPress</PackageProjectUrl>
@@ -28,7 +28,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\..\Users\Stanislav\Desktop\LoremPress_04.png">
+    <None Include="..\..\Design\Images\LoremPress_04.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
