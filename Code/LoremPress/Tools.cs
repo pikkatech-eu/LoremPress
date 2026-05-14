@@ -64,5 +64,21 @@ namespace LoremPress
 
 			return RandomString(length);
 		}
+
+		/// <summary>
+		/// Slugifies a text string replacing its non-internet characters with URL-consistent ones.
+		/// </summary>
+		/// <param name="text">Text to slugify.</param>
+		/// <returns>Text slugified.</returns>
+		internal static string Slugify(string text)
+		{
+			return text
+				.ToLowerInvariant()
+				.Replace(" ", "-")
+				.Replace(",", "")
+				.Replace(".", "")
+				.Replace(":", "")
+				.Replace(";", "");
+		}
 	}
 }

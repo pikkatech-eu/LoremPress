@@ -33,5 +33,10 @@ namespace LoremPress
 		/// Working instance of Codes class.
 		/// </summary>
 		public static Codes Codes				{get;} = new Codes();
+
+		/// <summary>
+		/// Working instance of Internet class.
+		/// </summary>
+		public static Internet Internet			{get;} = new Internet();
 	}
 }

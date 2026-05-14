@@ -573,5 +573,26 @@ namespace LoremPress
 			"Transactions in {Domain}"
 		};
 		#endregion
+
+		#region Url Templates
+		/// <summary>
+		/// Templates for online publications.
+		/// </summary>
+		internal static readonly string[] UrlTemplates =
+		{
+			"https://www.{Domain}.org/article/{Year}/{Slug}",
+			"https://{Domain}.journal.org/{Year}/{Slug}",
+			"https://journals.{Domain}.edu/archive/{Year}/{Slug}",
+			"https://{Domain}.press/articles/{Slug}",
+			"https://www.{Domain}.com/issues/{Year}/{Issue}/{Slug}",
+			"https://repository.{Domain}.edu/{Year}/{Slug}",
+			"https://archive.{Domain}.ac.uk/{Slug}",
+			"https://research.{Domain}.edu/papers/{Year}/{Slug}",
+			"https://www.{Domain}.com/{Year}/{Month}/{Slug}",
+			"https://{Domain}.net/posts/{Slug}",
+			"https://{Domain}.org/essays/{Slug}",
+			"https://www.{Domain}.io/articles/{Slug}"
+		};
+		#endregion
 	}
 }
