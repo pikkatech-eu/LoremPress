@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
-* File:         TitleCorpus.cs                                                     *
-* Contents:     Class TitleCorpus                                                  *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-13 11:22                                                   *
+* File:         Corpora.cs                                                         *
+* Contents:     Class Corpora                                                      *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:00                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/

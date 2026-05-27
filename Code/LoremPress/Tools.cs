@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
 * File:         Tools.cs                                                           *
 * Contents:     Class Tools                                                        *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-13 16:32                                                   *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:01                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/

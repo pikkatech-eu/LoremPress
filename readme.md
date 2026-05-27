@@ -1,12 +1,6 @@
 # LoremPress
 
-I missed some features in the Bogus library and, after ChatGPT was unable to find a replacement, 
-the decision was made to create something small and beatiful.
-
-LoremPress is a minimal .NET library for generating synthetic book and article titles using lightweight grammar templates 
-and curated vocabulary. 
-
-I appreciate ChatGPT's assistance at the decision making as well as at coding.
+LoremPress is a minimal .NET library for generating synthetic book and article titles using lightweight grammar templates and curated vocabulary. I missed some features in the Bogus library and, after ChatGPT was unable to find a replacement, the decision was made to create something small and beatiful. I appreciate ChatGPT's assistance at the decision making as well as at coding.
 
 It is designed to be:
 
@@ -15,9 +9,9 @@ It is designed to be:
   - dependency-free
   - easily extensible
   - suitable for test data, UI prototyping, and procedural content generation
-
 ## Concept
-LoremPress generates publication titles by combining:
+LoremPress generates titles by combining:
+
   - Templates (structure rules)
   - Vocabulary pools (words)
   - Random selection (controlled variability)
@@ -29,25 +23,19 @@ Example output:
   - *Empire of Broken Signals*
   - *On Ancient Structures*
   
-Generation of journal names, publication URLs, and random texts follows similar principles.
-
 ## Installation
 ### Nuget
-#### NuGet Console
-`Install-Package LoremPress`
+(Will be added)
 
-#### Visual Studio
-`Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution` \
-Browse for `LoremPress`.
-
-### Cloning repository
+### Clone this repository
 Choose the local directory where you want the code files of LoremPress to be cloned to.
 Then:
 `git clone https://github.com/pikkatech-eu/LoremPress`
 
 ### Download binaries
-  - Download self-extracting file with the latest installer version, e.g.:
+  - Download self-extracting file
 `https://github.com/pikkatech-eu/LoremPress/releases/download/Beta_1.0/LoremPress_setup_2026-05-12.exe`
+(which is the last version at the moment).
   - Launch the setup exe file, it will ask you where to install the files you need: `LoremPress.dll` and `LoremPress.deps.json`.
   - Add  `LoremPress.dll` as a dependency to your project.
 ## Quick Start
@@ -125,17 +113,10 @@ namespace LoremPress.Tests
 
 			Console.WriteLine();
 
+
 			// Create a text of academic flair with random number of sentences
 			string textAcademicRandom = Fakir.Prose.Text(Flair.Academic, 6, 2);
 			Console.WriteLine($"Text academic (random): \"{textAcademicRandom}\"");
-
-			// Creates a random publication URL
-			string url = Fakir.Internet.PublicationUrl("Chronicle of Radial Expeditions", 2012, 3);
-			Console.WriteLine($"Publication URL: \"{url}\"");
-
-			// Creates a publication URL date
-			DateTime? dtPublication = Fakir.Internet.PublicationUrlDate(2012, 3, 5);
-			Console.WriteLine($"Publication date: \"{dtPublication}\"");
 		}
 	}
 }
@@ -167,8 +148,6 @@ Text academic (4): "The literature echoes conflicting interpretations of Tempora
 Text academic (random): "Empirical data deconstructs across multiple Lost Observations. 
 						 The hypothesis attenuates the dynamics of Asymmetric Expeditions."
 
-Publication URL: "https:/archive.mythic-studies.ac.uk/chronicle-of-radial.pdf"
-Publication date: "2012-03-05 00:00:00"
 </pre>
 ## Design Philosophy
 

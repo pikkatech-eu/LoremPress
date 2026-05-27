@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
 * File:         Prose.cs                                                           *
 * Contents:     Class Prose                                                        *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-13 12:00                                                   *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:01                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/

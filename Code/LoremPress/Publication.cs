@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
-* File:         Title.cs                                                           *
-* Contents:     Class Title                                                        *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-13 11:17                                                   *
+* File:         Publication.cs                                                     *
+* Contents:     Class Publication                                                  *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:01                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/

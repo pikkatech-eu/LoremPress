@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
 * File:         Fakir.cs                                                           *
 * Contents:     Class Fakir                                                        *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-13 11:17                                                   *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:00                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/

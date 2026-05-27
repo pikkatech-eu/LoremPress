@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
-* File:         Style.cs                                                           *
-* Contents:     Class Style                                                        *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-12 19:36                                                   *
+* File:         Flair.cs                                                           *
+* Contents:     Enum Flair                                                         *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:00                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/

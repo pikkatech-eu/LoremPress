@@ -1,8 +1,8 @@
 ﻿/***********************************************************************************
 * File:         Internet.cs                                                        *
 * Contents:     Class Internet                                                     *
-* Author:       Stanislav Koncvebovski (aka Bav) (stanislav@pikkatech.eu)          *
-* Date:         2026-05-14 08:27                                                   *
+* Author:       Alexander Konnen (alex@pikkatech.eu)                               *
+* Date:         2026-05-14 23:00                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
@@ -14,9 +14,9 @@ namespace LoremPress
 	/// </summary>
 	public class Internet
 	{
-		private const int MAX_TITLE_WORDS = 3;
-		private static readonly char[] SPLIT_BY = new char[]{' ', '.', ',', ';', ':', '-'};
-		private const string DEFAULT_EXTENSION = ".pdf";
+		private const int MAX_TITLE_WORDS		= 3;
+		private static readonly char[] SPLIT_BY	= new char[]{' ', '.', ',', ';', ':', '-'};
+		private const string DEFAULT_EXTENSION	= ".pdf";
 
 		/// <summary>
 		/// Creates a random publication URL using its title and date.
@@ -27,15 +27,15 @@ namespace LoremPress
 		/// <returns>Created random publication URL.</returns>
 		public string PublicationUrl(string title, int? year, int? month)
 		{
-			string template = Tools.Pick(Corpora.UrlTemplates);
-			string domain	= Tools.Pick(Corpora.Domains);
+			string template		= Tools.Pick(Corpora.UrlTemplates);
+			string domain		= Tools.Pick(Corpora.Domains);
 			
-			domain = Tools.Slugify(domain);
+			domain				= Tools.Slugify(domain);
 
 			string[] lines		= title.Split(SPLIT_BY, StringSplitOptions.RemoveEmptyEntries).Take(MAX_TITLE_WORDS).ToArray();
 			string title3		= String.Join(" ", lines);
 
-			string slug = Tools.Slugify(title3);
+			string slug			= Tools.Slugify(title3);
 
 			string result = template;
 			result	= result.Replace("{Domain}", domain);
@@ -49,30 +49,24 @@ namespace LoremPress
 		}
 
 		/// <summary>
-		/// Creates an URL date using given date elements.
+		/// Creates a random publication URL using its title. The year and month of the publication will be randomly created.
 		/// </summary>
-		/// <param name="year">Publication year, if known.</param>
-		/// <param name="month">Publication month, if known.</param>
-		/// <param name="day">Publication day, if known.</param>
-		/// <returns>Created publication date, if at least year was known, otherwise null.</returns>
-		public DateTime? PublicationUrlDate(int? year, int? month, int? day)
+		/// <param name="title">Publication's title.</param>
+		/// <returns>Created random publication URL.</returns>
+		public string PublicationUrl(string title)
 		{
-			if (year == null)
-			{
-				return null;
-			}
+			return this.PublicationUrl(title, null, null);
+		}
 
-			if (month == null)
-			{
-				month = Tools.Randomizer.Next(1, 13);
-			}
+		/// <summary>
+		/// Creates a random publication URL. Title, year and month of the publication will be randomly created.
+		/// </summary>
+		/// <returns>Created random publication URL.</returns>
+		public string PublicationUrl()
+		{
+			string title = Fakir.Publication.Title(Flair.Technical);
 
-			if (day == null)
-			{
-				day = Tools.Randomizer.Next(1, 29);
-			}
-
-			return new DateTime((int)year, (int)month, (int)day);
+			return this.PublicationUrl(title);
 		}
 	}
 }
